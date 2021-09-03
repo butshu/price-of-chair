@@ -13,8 +13,8 @@ class Database(object):
     @staticmethod
     def initialize():
         client = pymongo.MongoClient(Database.URI)
-        Database.DATABASE = client['myFirstDatabase']
-        # Database.DATABASE = client.get_default_database()
+        # Database.DATABASE = client['myFirstDatabase']
+        Database.DATABASE = client.get_default_database(default='myFirstDatabase')
 
     @staticmethod
     def insert(collection, data):
