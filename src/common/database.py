@@ -13,8 +13,8 @@ class Database(object):
     @staticmethod
     def initialize():
         client = pymongo.MongoClient(Database.URI)
-        Database.DATABASE = client['sample_airbnb']
-        # Database.DATABASE = client.get_default_database()
+        # Database.DATABASE = client['mylib']
+        Database.DATABASE = client.get_default_database()
 
     @staticmethod
     def insert(collection, data):
